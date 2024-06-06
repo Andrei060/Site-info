@@ -1,0 +1,158 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/antet.css">
+    <link rel="stylesheet" href="../CSS/clase.css">
+    <link rel="stylesheet" href="../CSS/click.css">
+    <link rel="icon" href="../CSS/coding_computer_pc_screen_code_icon_193925.ico">
+    <script src="../JS/cod.js"></script>
+    <script src="../JS/click.js"></script>
+    <title>PROINFO</title>
+</head>
+<body>
+    <div class="antet">
+        <a href="../index.html" class="menu">ACASA</a>
+        <a href="../bac.html" class="menu">BAC</a>
+        <ul>
+            <li>
+                <a class="menu menuactiv" id="butonsubmeniu" onclick="meniu()" style="width: 130px;cursor: pointer;">INFORMATICA</a>
+            </li>
+            <li>
+                <ul class="submenu" id="submeniu">
+                    <li class="linkactiv">
+                        <a href="../clasaIX.html">Clasa a IX-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaX.html">Clasa a X-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaXI.html">Clasa a XI-a</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a href="../HTML.html" class="menu">HTML</a>
+        <a href="../css.html" class="menu">CSS</a>
+        <a href="../javascript.html" class="menu">JAVASCRIPT</a>
+    </div>
+    <div class="progres"></div>
+    <center>
+        <h1>Algoritmi</h1>
+    </center>
+    <div class="containerclasa" style="display: flex;">
+        
+        <div class="sortare">
+            <h2>
+                Algoritm pentru divizorii unui numar
+            </h2>
+            <h3>Algorimt c++</h3>
+            <textarea name="" id=""  style="width: 75%;height: 450px;">
+int d;
+for (d = 1;d * d <n;d++)
+{
+    if (n % d == 0) //daca n se imparte la d 
+    {
+        //prelucrare d;
+        //prelucrare n/d;
+    }
+}
+if (d * d == n) //daca n patrat perfect
+{
+    //prelucrare d;
+}
+            </textarea>
+        </div>
+        <div class="sortare">
+            <h2>
+                Maximul si minimul dintr un sir citit pana la intalinirea valorii 0
+            </h2> 
+            <h3>Algorimt c++</h3>
+            <textarea name="" id=""  style="width: 85%;height: 500px;">
+int minim = 999999999;
+//initializam minimul cu o valoare foarte mare;
+int maxim = 0;
+//initializam Maximul cu 0
+while (x != 0)
+{
+    cin>>x;
+    minim = min(minim,x);
+    maxim = max(maxim,x);
+}
+//functia max determina maximul dinte doua elemente;
+//functia min determina minimul dinte doua elemente;
+cout<<minim<<" "<<maxim;
+            </textarea>
+        </div>
+        <div class="sortare">
+            <h2>
+                Prelucrarea cifrelor unui numar
+            </h2>       
+            <h3>Algorimt c++</h3>
+            <textarea name="" id="" style="width: 75%;height: 250px;">
+do
+{
+    //prelucrare x%10;
+    x = x/10;
+}while (x!=0);
+            </textarea>
+        </div>
+    </div>
+    <div class="containerclasa" style="display: flex;">
+        <div class="sortare">
+            <h2>
+                Cifra de control
+            </h2> 
+            <h3>Algorimt c++</h3>
+            <textarea style="height:200px;width:75%;" >
+if (x%9 == 0) cout<<9;
+else if (x == 0) cout<<0;
+else cout<<x%9;
+            </textarea>
+        </div>
+        <div class="sortare">
+            <h2>
+                Cel mai mic divizor comun(CMMDC)
+            </h2> 
+            <h3>Algorimt c++</h3>
+            <textarea style="height:250px;width:75%;" >
+//cel mai mic divizor comun dintre a si b
+while (b != 0)
+{
+    int r = a%b;
+    a = b;
+    b = r;
+}
+
+            </textarea>
+        </div>
+        <div class="sortare">
+            <h2>
+                Descompunere in factori primi
+            </h2> 
+            <h3>Algorimt c++</h3>
+            <textarea style="height:600px;width:90%;" >
+int d = 2;
+int putere = 0;
+while (x > 1)
+{
+    if (x % d == 0)
+    {
+        putere = 0;
+        //vedem de cate ori se imparte x la d;
+        while (x % d == 0)
+        {
+            putere++;
+            x = x/d;
+        }
+        cout<<d<<" "<<putere<<'\n';
+    }
+    d++;
+    //daca x > 1 si d * d > x atunci x este un numar prim
+    if (x > 1 && d * d > x) 
+        d = x; //urmatorul factor prim din descompunere
+}
+
+            </textarea>
+        </div>
+    </div>
+</body>
+</html>

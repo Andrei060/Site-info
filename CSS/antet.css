@@ -1,0 +1,250 @@
+@font-face {
+    font-family: font;
+    src: url("Comic Book.otf");
+}
+body{
+    margin: 0;
+    font-family: font;
+    position: relative;
+    background-image: url("backgroundheaxgon.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}   
+a{
+    text-decoration: none;
+    transition: .7s;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.antet
+{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid gray;
+    background-color: cadetblue;
+    top:0;
+    z-index: 2;
+    animation:intraremeniu 1s;
+}
+@media(max-width: 900px) {
+    .antet{
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-bottom: 3px solid gray;
+        background-color: cadetblue;
+        position: sticky;
+        top:0;
+    }
+}
+.menu
+{
+    margin: 1%;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 24px;
+    transition: .7s;
+}
+@keyframes pozitie{
+    100%{
+        position: sticky;
+        top:0;
+    }
+}
+@keyframes intraremeniu{
+    0%{
+        margin-top: -100px;
+    }
+    100%{
+        margin: 0;
+    }
+}
+.menu:hover{
+    transition: .7s;
+    color: dodgerblue;
+    background-color: white;
+}
+.menuactiv
+{
+    border-radius: 24px;
+    background-color: white;
+    color: dodgerblue;
+}
+#submeniu
+{
+    cursor: pointer;
+}
+.submenu
+{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    border-radius: 0px 0px 24px 24px;
+    background-color: white;
+    width: 131.25px;
+    display: none;
+    margin-left: 1.25px;
+    margin-top: 10px;
+}
+.submenu li:last-child
+{
+    border-radius: 0px 0px 24px 24px;
+}
+.submenu li
+{
+    margin: 0;
+    padding:10px;
+    font-weight: bold;
+    transition: .7s;
+    cursor: pointer;
+}
+.submenu li a{
+    color: black;
+}
+.submenu li:hover
+{
+    transition: .7s;
+    color: dodgerblue;
+    background-color: bisque;
+}
+.submenu li:hover a{
+    transition: .7s;
+    color: dodgerblue;
+    background-color: bisque;
+}
+.menusisubmeniu
+{
+    border-radius: 24px 24px 0px 0px;
+    background-color: white;
+    color: dodgerblue;
+}
+.menusisubmeniu:hover{
+    color: dodgerblue;
+    background-color: bisque;
+}
+.linkactiv{
+    background-color: bisque;
+}
+li.linkactiv a{
+    color: dodgerblue;
+}
+textarea{
+    animation: intrare 1s;
+}
+h1,h2,h3,h4,h5,h6{
+    animation: intrare 1s;
+}
+p{
+    animation: intrare 1s;
+}
+@keyframes intrare{
+    0%{
+        opacity: 0;
+        transform: translateY(50px) scale(.8);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.progres
+{
+    height: 10px;
+    position: fixed;
+    background-color: chartreuse;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    animation:derulare linear;
+    animation-timeline: scroll();
+    z-index:1;
+}
+@keyframes derulare{
+    to{
+        scale: 1 1;
+    }
+}
+.baracontainer
+{
+    position: absolute;
+    top:0;
+    z-index: 3;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine; 
+    animation: dispare 4s forwards;
+    opacity: 1;
+}
+.baraincarcare{
+    position: relative;
+    height: 10px;
+    width: 30%;
+    border: 10px solid  chocolate;
+    border-radius: 24px;
+}
+.baraincarcare .culoare{
+    position: absolute;
+    background-color: #ffffff;
+    width: 0px;
+    height: 10px;
+    border-radius:24px;
+    animation: progres 4s ease-in-out;    
+}
+@keyframes dispare{
+    100%{
+        opacity: 0;
+        display: none;
+        z-index: -1;
+    }
+}
+@keyframes progres{
+    0%{
+      width: 0%;
+    }
+    25%{
+        width: 50%;
+    }
+    50%{
+        width: 75%;
+    }
+    75%{
+        width: 85%;
+    }
+    100%{
+        width: 100%;
+    }
+};
+::-webkit-scrollbar-track 
+{
+    border-radius: .3em;
+    margin-block: .25em;
+    background-color: dodgerblue;
+}
+::-webkit-scrollbar 
+{
+    width: 1em;
+    overflow-x: none;
+    background-color: dodgerblue;
+}
+::-webkit-scrollbar-thumb 
+{
+    border-radius: 10px;
+    background-color: cyan;
+    background: -webkit-linear-gradient(to right,cyan,dodgerblue);
+    background: linear-gradient(to right,cyan,dodgerblue);
+    border-radius: .3em;
+}

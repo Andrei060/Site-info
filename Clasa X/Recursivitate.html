@@ -1,0 +1,114 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/antet.css">
+    <link rel="stylesheet" href="../CSS/clase.css">
+    <link rel="stylesheet" href="../CSS/click.css">
+    <link rel="icon" href="../CSS/coding_computer_pc_screen_code_icon_193925.ico">
+    <script src="../JS/cod.js"></script>
+    <script src="../JS/click.js"></script>
+    <title>PROINFO</title>
+</head>
+<body>
+    <div class="antet">
+        <a href="../index.html" class="menu">ACASA</a>
+        <a href="../bac.html" class="menu">BAC</a>
+        <ul>
+            <li>
+                <a class="menu  menuactiv" id="butonsubmeniu" onclick="meniu()" style="width: 130px;cursor: pointer;">INFORMATICA</a>
+            </li>
+            <li>
+                <ul class="submenu" id="submeniu">
+                    <li>
+                        <a href="../clasaIX.html">Clasa a IX-a</a>
+                    </li>
+                    <li class="linkactiv">
+                        <a href="../clasaX.html">Clasa a X-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaXI.html">Clasa a XI-a</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a href="../HTML.html" class="menu">HTML</a>
+        <a href="../css.html" class="menu">CSS</a>
+        <a href="../javascript.html" class="menu">JAVASCRIPT</a>
+    </div>
+    <div class="containerclasa" style="flex-direction: column;width: 100%;box-sizing: border-box;">
+        <div>
+            <h3>In C++,recursivitatea se realizeaza prin intermediul functiilor,care se pot autoapela</h3>
+            <h2>Factoriul unui numar</h2>
+            <h4>Click pentru a copia codul</h4>
+            <div style="width: 100%;display: flex;">
+                <div style="margin-left: 10px;">
+                    <h2>Varianta non-recursiva</h2>
+                    <img src="Poze/recursivitatea.png" alt="" onclick="copy('Rec1')">
+                </div>
+                <div style="margin-left: 10px;">
+                    <h2>Varianta recursiva</h2>
+                    <img src="Poze/recursivitatea2.png" alt="" onclick="copy('Rec2')">
+                </div>
+                <div style="margin-left: 10px;">
+                    <h2>Varianta recursiva cu functie de tip void</h2>
+                    <img src="Poze/recursivitate3.png" alt="" onclick="copy('Rec3')">
+                </div>
+                <div style="margin-left: 10px;">
+                    <h2>Varianta recursiva cu functie de tip non-void</h2>
+                    <img src="Poze/recursivitate4.png" alt="" onclick="copy('Rec4')">
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%;">
+            <h2>Cum funcționează recursivitatea?</h2>
+            <p>Ne amintim că toate variabilele locale din definiția unei funcții precum și valorile parametrilor formali se memorează la apel în memoria de tip STIVĂ (STACK).</p>
+            <p>Pentru fiecare apel al unei funcții se adaugă pe stivă o zonă de memorie în care se memorează variabilele locale și parametrii pentru apelul curent. Această zonă a stivei va exista până la finalul apelului, după care se va elibera. Dacă din apelul curent se face un alt apel, se adaugă pe stivă o nouă zonă de memorie, iar conținutul zonei anterioare este inaccesibil până la finalul acelui apel. Aceste operații se fac la fel și dacă al doilea apel este un autoapel al unei funcții recursive.</p>
+        </div>
+    </div>
+</body>
+<style>
+    textarea
+    {
+        display: none;
+    }
+</style>
+<textarea name="" id="Rec1">
+int fact(int n)
+{
+    int p = 1;
+    for (int i = 1; i<=n;i++)
+        p = p * i;
+    return p;
+}
+</textarea>
+<textarea name="" id="Rec2">
+int fact(int n)
+{
+    if (n == 0)
+        return 1;
+    else
+        return n * fact(n - 1);
+}
+</textarea>
+<textarea name="" id="Rec3">
+int fact(int n,int &r)
+{
+    if (n == 0)
+        r = 1;
+    else{
+        fact(n - 1,r);
+        r = r * n;
+    }
+}
+</textarea>
+<textarea name="" id="Rec4">
+int fact(int n)
+{
+    int r;
+    if (n == 0)
+        r = 1;
+    else
+        r = n * fact(n - 1);
+    return r;
+}
+</textarea>
+</html>

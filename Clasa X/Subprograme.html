@@ -1,0 +1,113 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/antet.css">
+    <link rel="stylesheet" href="../CSS/clase.css">
+    <link rel="stylesheet" href="../CSS/click.css">
+    <link rel="icon" href="../CSS/coding_computer_pc_screen_code_icon_193925.ico">
+    <script src="../JS/cod.js"></script>
+    <script src="../JS/click.js"></script>
+    <title>PROINFO</title>
+</head>
+<body>
+    <div class="antet">
+        <a href="../index.html" class="menu">ACASA</a>
+        <a href="../bac.html" class="menu">BAC</a>
+        <ul>
+            <li>
+                <a class="menu  menuactiv" id="butonsubmeniu" onclick="meniu()" style="width: 130px;cursor: pointer;">INFORMATICA</a>
+            </li>
+            <li>
+                <ul class="submenu" id="submeniu">
+                    <li>
+                        <a href="../clasaIX.html">Clasa a IX-a</a>
+                    </li>
+                    <li class="linkactiv">
+                        <a href="../clasaX.html">Clasa a X-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaXI.html">Clasa a XI-a</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a href="../HTML.html" class="menu">HTML</a>
+        <a href="../css.html" class="menu">CSS</a>
+        <a href="../javascript.html" class="menu">JAVASCRIPT</a>
+    </div>
+<style>
+</style>
+    <div class="containerclasa" >
+        <div class="subprogram">
+            <h2>
+                Subprograme
+            </h2>
+            <p>Un subprogram este o colecție de tipuri de date, variabile, instrucțiuni care îndeplinesc o anumită sarcină (calcule, citiri, afișări), atunci când este apelat (folosit) de un program sau de un alt subprogram.</p>
+            <h2>
+                Avantaje
+            </h2>
+            <p>-reutilizarea codului – după ce am scris un subprogram îl pute apela de oricâte ori este nevoie;
+            </p>
+            <p>
+                -reducerea numărului de erori care pot să apară în scrierea unui program
+            </p>
+            <p>
+                -depistarea cu ușurință a erorilor – fiecare subprogram va fi verificat la crearea sa, apoi verificăm modul în care apelăm subprogramele
+            </p>
+            <p>
+                -depistarea cu ușurință a erorilor – fiecare subprogram va fi verificat la crearea sa, apoi verificăm modul în care apelăm subprogramele
+            </p>
+            <h2>
+                Subprogramele pot fi de două tipuri:
+            </h2>
+            <p>
+                -funcții – subprograme care determină un anumit rezultat, o anumită valoare, pornind de la anumite date de intrare. Spunem că valoarea este returnată de către funcție, iar aceasta va fi apelată ca operand într-o expresie, valoarea operandului în expresie fiind de fapt valoarea rezultatului funcției.
+            </p>
+            <p>
+                -proceduri – subprograme care se folosesc într-o instrucțiune de sine stătătoare, nu într-o expresie. Ele îndeplinesc o sarcină, au un efect și nu returnează un rezultat. De exemplu, citirea unor variabile, afișarea unor valori, transformarea unor date, etc.            </p>
+        </div>
+        <div class="subprogram">
+            <h4>click pe poza pentru a copia codul</h4>
+            <h2>Definire procedura</h2>
+            <img src="Poze/afis.png" alt="" width="80%" onclick="copy('procedura')">
+            <h2>Definire de functie</h2>
+            <img src="Poze/functie.png" alt="" width="80%" onclick="copy('functie')">
+        </div>
+    </div>
+</body>
+<textarea name="" id="procedura" style="display: none;">
+#include <iostream>
+using namespace std;
+void afis()
+{
+    cout<<"Aceasta este o procedura";
+}
+int main()
+{
+    afis();
+    return 0;
+}
+</textarea>
+<textarea name="" id="functie" style="display: none;">
+#include <iostream>
+using namespace std;
+int x;//variabila globala
+/* & inseamna ca variabila cu care am 
+apelat functia isi poate modifica
+valoare dupa apelul functiei
+*/
+int prim(int &x)
+{
+    int d = 2;//variabila locala
+    //la return funtia se opreste
+    if (x < 2) return 0;
+    for (d = 2;d * d <= x;d++)
+        if (x % d == 0) return 0;
+    return 1;
+}
+int main()
+{
+    //functia prim are parametrul x 
+    cout<<prim(x); //parametru actual;
+}
+</textarea>
+</html>

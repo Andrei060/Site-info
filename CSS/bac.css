@@ -1,0 +1,58 @@
+.containerbac
+{
+    box-sizing: border-box;
+    padding: 0 20 0 20px;
+}
+@keyframes intrare-de-sus{
+    0%{
+        opacity: 0;
+        transform: translateY(-50px) scale(.8);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+@keyframes intrare-de-jos{
+    0%{
+        opacity: 0;
+        transform: translateY(50px) scale(.8);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.animatie
+{
+    display: block;
+    animation: intrare-de-jos 1s;
+}
+.linkbac
+{
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    color: darkblue;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 24px;
+    transition: .7s;
+    animation:intrare-de-jos 1s;
+}
+.linkbac:hover{
+    transition: .7s;
+    background-color: darkblue;
+    color: white;
+}
+@media (max-width: 1400px){
+    .linkbac{
+        font-size: 4rem;
+        border-radius: 50px;
+        padding: 50px;
+    }
+    h2{
+        display: block;
+        font-size:4rem;
+    }
+}

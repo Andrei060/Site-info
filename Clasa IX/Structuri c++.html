@@ -1,0 +1,147 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/antet.css">
+    <link rel="stylesheet" href="../CSS/clase.css">
+    <link rel="stylesheet" href="../CSS/click.css">
+    <link rel="icon" href="../CSS/coding_computer_pc_screen_code_icon_193925.ico">
+    <script src="../JS/cod.js"></script>
+    <script src="../JS/click.js"></script>
+    <title>PROINFO</title>
+</head>
+<body>
+    <div class="antet">
+        <a href="../index.html" class="menu">ACASA</a>
+        <a href="../bac.html" class="menu">BAC</a>
+        <ul>
+            <li>
+                <a class="menu   menuactiv" id="butonsubmeniu" onclick="meniu()" style="width: 130px;cursor: pointer;">INFORMATICA</a>
+            </li>
+            <li>
+                <ul class="submenu" id="submeniu">
+                    <li class="linkactiv">
+                        <a href="../clasaIX.html">Clasa a IX-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaX.html">Clasa a X-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaXI.html">Clasa a XI-a</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a href="../HTML.html" class="menu">HTML</a>
+        <a href="../css.html" class="menu">CSS</a>
+        <a href="../javascript.html" class="menu">JAVASCRIPT</a>
+    </div>
+    <div class="progres"></div>
+<style>
+.sortare
+{
+    text-align: left;
+}
+</style>
+    <div class="containerclasa" style="justify-content: space-evenly;">
+        <div class="sortare">
+            <h3>Structura liniară</h3>
+            <p>Structura liniară este reprezentată de instrucțiuni care se execută la fel la fiecare executare a programului (sau a secvenței de program), indiferent care sunt valorile variabilelor cu care se lucrează.</p>
+            <h3>Exemplu</h3>
+            <textarea name="" id="" rows="15" cols="25">
+#include <iostream>
+using namespace std;
+int main()
+{
+    int x = 5;
+    {
+        int x = 6;
+        cout << x << endl; // se va afisa 6
+    }
+    cout << x << endl; // se va afisa 5
+    return 0;
+}
+
+            </textarea>
+        </div>
+        <div class="sortare">
+            <h3>Structuri alternative</h3>
+            <p>În anumite situații, este necesară executarea unor instrucțiuni în cadrul unui program numai în anumite condiții. 
+                Structurile alternative sau de decizie permit rezolvarea unor asemenea situații.</p>
+            <p>Instrucțiunea if este cea mai utilizată structură alternativă.</p>
+            <h3>Varianta 1</h3>
+            <textarea name="" id="" rows="5">
+if (expresie == true)
+    Instrcutiune1
+else
+    Instrcutiune2
+            </textarea>
+            <h3>Varianta 2</h3>
+            <textarea name="" id="" rows="3">
+if (expresie == true)
+    Instrcutiune1
+            </textarea>
+        </div>
+    </div>
+
+    <div class="containerclasa" style="justify-content: space-evenly;">
+        <div class="sortare">
+            <h3>Structuri repetitive</h3>
+            <h3>Structurile repetitive pot fi:</h3>
+            <p>pasi = iterații</p>
+            <p>-cu număr cunoscut de pași  – se cunoaște de la început de câte ori se va execută instrucțiunea</p>
+            <p>-cu număr necunoscut de pași . Instrucțiunea se execută cât timp o condiție este adevărată. La fiecare pas se va evalua condiția, iar dacă aceasta este adevărată se va executa instrucțiunea.</p>
+            <h3>Structurile repetitive cu număr necunoscut de pași pot fi:</h3>
+            <p>cu test inițial: mai întâi se evaluează condiția; dacă este adevărată se execută instrucțiunea și procesul se reia.</p>
+            <p>cu test final: mai întâi se execută instrucțiunea, apoi se evaluează condiția; Dacă este adevărată, procesul se reia.</p>
+            <p>while – reprezintă o structură repetitivă cu număr necunoscut de pași și test inițial;</p>
+            <p>do...while – reprezintă o structură repetitivă cu număr necunoscut de pași și test final;</p>
+            <p>for – reprezintă de o structură repetitivă cu număr necunoscut de pași și test inițial; se folosește frecvent când se cunoaște numărul de pași. Putem spune că strucutra rerepetitivă cu număr cunoscut de pași se implementează în C/C++ prin intermediul său!</p>
+            <p>Există de asemenea două instrucțiuni care controlează execuția structurilor repetitive:</p>
+            <p>break – întrerupe execuția structurii repetitive curente;</p>
+            <p>continue – la întâlnirea ei execuția programului trece la expresiile care controlează structura repetitivă curentă, ignorând instrucțiunile care îi urmează în corpul ciclului.</p>
+        </div>
+        <div class="sortare">
+            <h3>while</h3>
+                <textarea name="" id="" rows="6">
+while(i <= n)
+{
+    S+=i;
+    i++;
+}
+                </textarea>
+            <h3>do while</h3>
+            <textarea name="" id="" rows="6">
+do
+{
+    S+=i;
+    i++;
+}while(i <= n);
+                </textarea>
+            <h3>for </h3>
+            <textarea name="" id="" rows="3">
+for (int i = 1; i<=n;i++)
+    S+=i;
+            </textarea>
+            <h3>break</h3>
+            <textarea name="" id="" rows="8">
+for (int i = 1; i<=n;i++)
+{
+    //la i = 3 se opreste
+    S+=i;
+    if (i == 3)
+        break;
+}
+            </textarea>
+            <h3>continue</h3>
+            <textarea name="" id="" rows="9">
+for (int i = 1;i<=n;i++)
+{
+    //numerele i pare nu le adauga in suma
+    if (i % 2 == 0)
+        cotinue;
+    S+=i;
+}
+            </textarea>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/antet.css">
+    <link rel="stylesheet" href="../CSS/clase.css">
+    <link rel="stylesheet" href="../CSS/click.css">
+    <link rel="icon" href="../CSS/coding_computer_pc_screen_code_icon_193925.ico">
+    <script src="../JS/cod.js"></script>
+    <script src="../JS/click.js"></script>
+    <title>PROINFO</title>
+</head>
+<body>
+    <div class="antet">
+        <a href="../index.html" class="menu">ACASA</a>
+        <a href="../bac.html" class="menu">BAC</a>
+        <ul>
+            <li>
+                <a class="menu   menuactiv" id="butonsubmeniu" onclick="meniu()" style="width: 130px;cursor: pointer;">INFORMATICA</a>
+            </li>
+            <li>
+                <ul class="submenu" id="submeniu">
+                    <li class="linkactiv">
+                        <a href="../clasaIX.html">Clasa a IX-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaX.html">Clasa a X-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaXI.html">Clasa a XI-a</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a href="../HTML.html" class="menu">HTML</a>
+        <a href="../css.html" class="menu">CSS</a>
+        <a href="../javascript.html" class="menu">JAVASCRIPT</a>
+    </div>
+    <div class="progres"></div>
+    <div class="containerclasa">
+        <div>
+            <p>Vectorii de frecventa sunt folositi pentru a retine numarul de apariitii a unei valori</p>
+            <p>Problema:Sa se determine numarul din sir cu cel mai mare numar de apariti</p>
+            <p>Date de intrare:</p>
+            <p>10
+                1 2 3 4 5 1 6 7 8 10
+            </p>
+            <p>Date de iesire:</p>
+            <p>1</p>
+            <p>Rezolvare:</p>
+            <textarea name="" id="" rows="23" cols="45">
+int n,mx = 0,fr[100001];
+cin>>n;
+//numaru de elemente
+for (int i = 1; i<=n;i++)
+{
+    cin>>x;
+    //citim valoare din sir
+    fr[x]++;
+    mx = max(x,mx);
+    //mx este valoarea maxima din sir
+}
+int pozmax = 0;
+//numar cu cele mai multe apariti
+for (int i = 0; i<=mx;i++)
+{
+    if (fr[i] > fr[pozmax]) pozmax = i;
+    /*daca frecventa lui este mai
+     mare decat cea a lui pozmax
+     atunci schimba valoare lui pozmax cu i
+     */
+}
+            </textarea>
+        </div>
+    </div>
+</body>
+</html>

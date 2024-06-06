@@ -1,0 +1,53 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/antet.css">
+    <link rel="stylesheet" href="../CSS/clase.css">
+    <link rel="stylesheet" href="../CSS/click.css">
+    <link rel="icon" href="../CSS/coding_computer_pc_screen_code_icon_193925.ico">
+    <script src="../JS/cod.js"></script>
+    <script src="../JS/click.js"></script>
+    <title>PROINFO</title>
+</head>
+<body>
+    <div class="antet">
+        <a href="../index.html" class="menu">ACASA</a>
+        <a href="../bac.html" class="menu">BAC</a>
+        <ul>
+            <li>
+                <a class="menu   menuactiv" id="butonsubmeniu" onclick="meniu()" style="width: 130px;cursor: pointer;">INFORMATICA</a>
+            </li>
+            <li>
+                <ul class="submenu" id="submeniu">
+                    <li class="linkactiv">
+                        <a href="../clasaIX.html">Clasa a IX-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaX.html">Clasa a X-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaXI.html">Clasa a XI-a</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a href="../HTML.html" class="menu">HTML</a>
+        <a href="../css.html" class="menu">CSS</a>
+        <a href="../javascript.html" class="menu">JAVASCRIPT</a>
+    </div>
+<div class="progres"></div>
+    <div class="containerclasa">
+        <div class="sortare" style="text-align: left;">
+            <h3>Sume parțiale în vectori</h3>
+            <p>Considerăm un vector cu elemente numerice. În unele probleme se cere să determinăm rapid suma elementelor din anumite secvențe date. Desigur, o soluție este parcurgerea tuturor elementelor din secvență și determinarea sumei, dar această operație are complexitatea O(n)</p>
+            <p>În asemenea situații putem folosi sumele parțiale.</p>
+            <p>Pentru aceasta vom folosi un vector auxiliar numit S[] cu urmatoarea semnificatie S[i] = X[1] + X[2] + ... + X[i]</p>
+            <p>S[i] = 0 daca i = 0</p>
+            <p>S[i] = S[i - 1] + X[i];</p>
+        </div>
+        <div class="sortare" style="text-align: left;">
+            <h3>Implementare</h3>
+            <img src="Poze/algsuma.png" alt="" width="100%">
+        </div>
+    </div>
+</body>
+</html>

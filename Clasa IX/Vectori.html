@@ -1,0 +1,167 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/antet.css">
+    <link rel="stylesheet" href="../CSS/clase.css">
+    <link rel="stylesheet" href="../CSS/click.css">
+    <link rel="icon" href="../CSS/coding_computer_pc_screen_code_icon_193925.ico">
+    <script src="../JS/cod.js"></script>
+    <script src="../JS/click.js"></script>
+    <title>PROINFO</title>
+</head>
+<body>
+    <div class="antet">
+        <a href="../index.html" class="menu">ACASA</a>
+        <a href="../bac.html" class="menu">BAC</a>
+        <ul>
+            <li>
+                <a class="menu   menuactiv" id="butonsubmeniu" onclick="meniu()" style="width: 130px;cursor: pointer;">INFORMATICA</a>
+            </li>
+            <li>
+                <ul class="submenu" id="submeniu">
+                    <li class="linkactiv">
+                        <a href="../clasaIX.html">Clasa a IX-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaX.html">Clasa a X-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaXI.html">Clasa a XI-a</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a href="../HTML.html" class="menu">HTML</a>
+        <a href="../css.html" class="menu">CSS</a>
+        <a href="../javascript.html" class="menu">JAVASCRIPT</a>
+    </div>
+    <div class="progres"></div>
+    <div class="containerclasa">
+        <div>
+            <p>Numim tablou/vector o colectie de date, de acelasi tip, situate intr-o zona de memorie continua (elementele
+                tabloului se afla la adrese succesive). Tablourile sunt variabile compuse (structurate), deoarece grupeaza
+                mai multe elemente.
+            </p>
+            <p>Modul de declarare:tip nume_tablou[dim_1]</p>
+            <p>unde: tip reprezinta tipul elementelor tabloului; dim_1 sunt numere intregi sau expresii
+                constante intregi (a caror valoare este evaluata la compilare) care reprezinta limitele superioare ale indicilor
+                tabloului.</p>
+            <p>int vect[20];</p>
+                <p>Este declararea tabloului vect, de maximum 20 de elemente, de tipul int. Elementele tabloului vect
+                sunt : vect[0], vect[1], ..., vect[19] – date de tip int</p>
+            <h2>Obs. Vectorii pot incepe numaratoarea de la i = 0 si i&lt;n sau i = 1 si i&lt;=n </h2>
+            <h3>In urmatoarele exeple este varianta cu i = 1</h3>
+            <h3>Se spune ca vectorul este indexat de la 1,adica pe pozitia 1 se incepe parcurgerea</h3>
+            <div>
+                <div style="padding: 10px;float: left;width: auto;">
+                    <h3>
+                    Citirea unui vector cu n elemente
+                    </h3>
+                    <textarea name="" id="" rows="8">
+int v[1001],n;
+v poate avea 1001 elemente
+for (int i = 1;i<=n;i++)
+{
+    cin>>v[i];
+}
+                    </textarea>
+                </div>
+                <div style="padding: 10px;float: left;width: auto;">
+                    <h3>Afisarea elementelor</h3>
+                    <textarea name="" id="" rows="3">
+for (int i = 1;i<=n;i++)
+    cout<<v[i]<<" ";
+                    </textarea>
+                </div>
+                <div style="padding: 10px;float: left;width: auto;">
+                    <h3>Parcurgerea vectorului de la dreapta la stanga</h3>
+                    <textarea rows="6">
+for (int i = n;i>=1;i--)
+{
+    //prelucrare v[i];
+}
+                    </textarea>
+                </div>
+                <div style="padding: 10px;float: left;width: auto;">
+                    <h3>Deplasarea cu o pozitie la dreapta a elementelor</h3>
+                    <textarea name="" id="" rows="7" cols="30">
+aux = v[n]; //retinem ultimul element;
+for (i=n-1; i>=1; i--) v[i+1] = v[i];
+v[1] = aux;
+/*adaugam ultimul 
+element pe prima pozitie*/
+                    </textarea>
+                </div>
+                <div style="padding: 10px;float: left;width: auto;">
+                    <h3>Deplasarea elementelor vectorului cu o poziţie la stânga</h3>
+                    <textarea name="" id="" rows="8" cols="30">
+aux = v[1];//retinem primul element;
+for (i=1; i>=n-1; i++) v[i] = v[i+1];
+v[n] = aux; 
+/*
+adaugam primul
+element pe ultima pozitie
+*/
+                    </textarea>
+                </div>
+                <div style="padding: 10px;float: left;width: auto;">
+                    <h3>Inserarea unui element în vector</h3>
+                    <textarea name="" id="" rows="10" cols="30">
+//inseram x pe pozitia p
+cin>>x>>p;
+n++;//crestem numarul de elemente
+//deplasam elemente spre dreapta
+for(i = n - 1; i>=p; i--) v[i + 1]=v[i];
+//adaugam x,acum pozitia p fiind libera 
+v[p] = x;  
+ 
+                    </textarea>
+                </div>
+                <div style="padding: 10px;float: left;width: auto;">
+                    <h3>Inserarea repetata</h3>
+                    <textarea name="" id="" rows="15" cols="35">
+i=1;
+while(i<=n)
+    if(v[i] respecta conditia)
+    {
+        // deplasarea elementelor o pozitie la dreapta
+        for(j=n; j>=i+1; j++) 
+            v[j+1]=v[j]; 
+        n++;
+        // valoarea care trebuie inserata
+        v[i+1]=.....;
+        i=i+2;
+    }
+    else i++; 
+                    </textarea>
+                </div>
+                <div style="padding: 10px;float: left;width: auto;">
+                    <h3>Eliminarea unui element din vector</h3>
+                    <textarea name="" id="" rows="10" cols="30">
+/*stergem elementul 
+de pe pozitia p*/
+cin>>p;
+for(i=p; i<=n-1;i++) v[i] = v[i+1];
+n--;
+/*am facut n-- pentru ca am
+eliminat o valoare si nu mai am n elemente*/
+                    </textarea>
+                </div>
+                <div style="padding: 10px;float: left;width: auto;">
+                    <h3>Eliminarea repetata</h3>
+                    <textarea name="" id="" rows="10">
+i = 1;
+while(i<=n)
+    if(v[i] respecta conditia)
+    {
+        for(j = i; j<=n - 1; j++) 
+            v[j]=v[j+1];
+        n--;
+    }
+    else i++;
+                    </textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

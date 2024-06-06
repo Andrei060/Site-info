@@ -1,0 +1,110 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/antet.css">
+    <link rel="stylesheet" href="../CSS/clase.css">
+    <link rel="stylesheet" href="../CSS/click.css">
+    <link rel="icon" href="../CSS/coding_computer_pc_screen_code_icon_193925.ico">
+    <script src="../JS/cod.js"></script>
+    <script src="../JS/click.js"></script>
+    <title>PROINFO</title>
+</head>
+<body>
+    <div class="antet">
+        <a href="../index.html" class="menu">ACASA</a>
+        <a href="../bac.html" class="menu">BAC</a>
+        <ul>
+            <li>
+                <a class="menu  menuactiv" id="butonsubmeniu" onclick="meniu()" style="width: 130px;cursor: pointer;">INFORMATICA</a>
+            </li>
+            <li>
+                <ul class="submenu" id="submeniu">
+                    <li>
+                        <a href="../clasaIX.html">Clasa a IX-a</a>
+                    </li>
+                    <li class="linkactiv">
+                        <a href="../clasaX.html">Clasa a X-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaXI.html">Clasa a XI-a</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a href="../HTML.html" class="menu">HTML</a>
+        <a href="../css.html" class="menu">CSS</a>
+        <a href="../javascript.html" class="menu">JAVASCRIPT</a>
+    </div>
+    <div class="progres"></div>
+    <div class="containerclasa">
+        <div class="sortare" style="text-align: left;">
+            <p>
+            -Problemă: Se dă o matrice binară, reprezentând harta unui teren (labirint, clădire, tablă de joc, etc.), 
+            în care valorile 0 reprezintă zone libere, iar cele egale cu 1 reprezintă obstacole. Într-o zonă aflată la 
+            coordonate cunoscute se află un mobil, care se poate deplasa prin matrice, trecând din zona curenta în una 
+            din cele patru zone vecine de pe aceeași linie sau aceeași coloană, dacă este liberă. Să se identifice zonele 
+            în care poate să ajungă mobilul.
+            </p>
+        </div>
+        <div class="sortare">
+            <h4>Dand click pe poza puteti copia codul</h4>
+            <h3>Functia recursiva FILL</h3>
+            <img src="Poze/fill1.png" title="copiaza textul" width="100%" style="cursor: pointer;" onclick="copierefill1()">
+        </div>
+        <div class="sortare">
+            <h3>MAIN</h3>
+            <img src="Poze/fill2.png" title="copiaza textul" width="100%" style="cursor: pointer;" onclick="copierefill2()">
+        </div>
+    </div>
+</body>
+<textarea name="" id="fill1" style="display: none;">
+int eposibil(int i,int j)
+{
+    //verific daca n am iesit din matrice
+    if (i<1 || i>n || j<1 || j>m) return 0;
+    //verific daca zona este vizitabila sau daca n am vizitat o 
+    if (a[i][j]!=1) return 0;
+    return 1;
+}
+void fill(int i,int j,int pas)
+{
+    if (eposibil(i,j)==1)
+    {
+        //adaug valoare in matrice
+        a[i][j]=pas;
+        //parcurg matricea
+        fill(i-1,j,pas);
+        fill(i,j-1,pas);
+        fill(i,j+1,pas);
+        fill(i+1,j,pas);
+    }
+}
+</textarea>
+<textarea name="" id="fill2" style="display: none;">
+int main()
+{
+    f>>n>>m;
+    for (i=1;i<=n;i++)
+        for (j=1;j<=m;j++) f>>a[i][j];
+    for (i=1;i<=n;i++)
+    {
+        for (j=1;j<=m;j++)
+        {
+            if (a[i][j]==1)
+            {
+                nr++;
+                fill(i,j,nr);
+            }
+        }
+    }
+    /*for (i=1;i<=n;i++)
+    {
+        for (j=1;j<=m;j++) cout<<a[i][j]<<" ";
+        cout<<endl;
+    }
+    cout<<endl;*/
+    g<<nr-1;
+    
+    return 0;
+}
+</textarea>
+</html>

@@ -1,0 +1,118 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/antet.css">
+    <link rel="stylesheet" href="../CSS/clase.css">
+    <link rel="stylesheet" href="../CSS/click.css">
+    <link rel="icon" href="../CSS/coding_computer_pc_screen_code_icon_193925.ico">
+    <script src="../JS/cod.js"></script>
+    <script src="../JS/click.js"></script>
+    <title>PROINFO</title>
+</head>
+<body>
+    <div class="antet">
+        <a href="../index.html" class="menu">ACASA</a>
+        <a href="../bac.html" class="menu">BAC</a>
+        <ul>
+            <li>
+                <a class="menu   menuactiv" id="butonsubmeniu" onclick="meniu()" style="width: 130px;cursor: pointer;">INFORMATICA</a>
+            </li>
+            <li>
+                <ul class="submenu" id="submeniu">
+                    <li class="linkactiv">
+                        <a href="../clasaIX.html">Clasa a IX-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaX.html">Clasa a X-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaXI.html">Clasa a XI-a</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a href="../HTML.html" class="menu">HTML</a>
+        <a href="../css.html" class="menu">CSS</a>
+        <a href="../javascript.html" class="menu">JAVASCRIPT</a>
+    </div>
+    <div class="progres"></div>
+    <center>
+        <h1>Metode</h1>
+    </center>
+    <div class="containerclasa" style="display: flex;">
+        
+        <div class="sortare">
+            <h3>swap(a,b) a si b isi schimba valorile intre ele</h3>
+            <h2>
+                METODA SELECTIEI DIRECTE
+            </h2>
+            <p>
+                Mecanism:Acest algoritm selectează, la fiecare pas i, cel mai mic element din vectorul nesortat (de la poziţia i până
+                la n).Valoarea minimă găsită la pasul i (în poziția poz este pusă în vector la poziţia i, facându-se
+                intereschimbarea cu poziţia actuală a minimului (poz). Nu este un algoritm indicat pentru vectorii mari.            </p>
+            <h3>Algorimt c++</h3>
+            <textarea name="" id=""  style="width: 75%;height: 450px;">
+for(i = 1;i < n;i++)
+{//se determină poziția în care se află cel mai mic element din vector printre pozițiile de la i + 1 la n
+    poz = i;
+    minv = v[i];
+    for(j = i + 1;j<=n;j++)
+        if(v[j] < minv)
+        {
+            poz = j;
+            minv = v[j];
+        }
+        //se interschimbă v[i] cu v[poz]
+        swap(v[i],v[poz]);
+}
+            </textarea>
+        </div>
+        <div class="sortare">
+            <h2>
+                METODA BULELOR
+            </h2> 
+            <p>Prin această metodă se parcurge vectorul și se compară fiecare element cu succesorul său în vector(v[i] cu v[i+1], unde i ia valori de la 1 la n-1). Dacă nu sunt în ordine cele două elemente (v[i] și v[i+1]) se interschimbă între ele. Vectorul se parcurge de mai multe ori, până când la o parcurgere completă nu se mai execută nicio interschimbare între elemente (vectorul este sortat).
+                La efectuarea unei interschimbari se marchează această operaţie prin valoarea FALSE (0) a unei
+                variabile logice care, înainte de parcurgere va avea valoarea TRUE (1). La sfârşitul algoritmului
+                valoarea acestei variabile va fi TRUE, pentru că nu va mai fi necesară nici o interschimbare.</p>
+            <h3>Algorimt c++</h3>
+            <textarea name="" id=""  style="width: 75%;height: 300px;">
+bool ok = 0;
+do{
+    ok = 1;
+    for (int i = 1;i<n;i++)
+        if (v[i] > v[i + 1])
+        {
+            ok = 0;
+            swap(v[i],v[i + 1]);
+        }
+}while (ok == 0);
+            </textarea>
+        </div>
+        <div class="sortare">
+            <h2>
+                METODA INTERSCHIMBULUI DIRECT
+            </h2>      
+            <p>
+                Mecanismul:Se aseamănă foarte mult cu metoda selecției directe în sensul că, pe poziția i din vector se aduce cea mai mică valoare existentă în pozițiile de la i la n.
+            </p>   
+            <p>
+                Raționamentul este următorul: elementul de pe poziția i (adică, v[i]) se consideră pivot (=fixat) și se 
+verifică pe rând cu fiecare dintre elementele de pe pozițiile de la i+1 la n, dacă nu îndeplinește ordonarea impusă (parcurgerea indicilor de la i+1 la n o realizăm cu variabila j). Astfel, se verifică dacă V[i]>V[j],
+caz în care se interschimbă V[i] cu V[j].
+
+            </p> 
+            <h3>Algorimt c++</h3>
+            <textarea name="" id="" style="width: 75%;height: 250px;">
+for (int i = 1; i<n;i++)
+{
+    for (int j = i + 1;j<=n;j++)
+    {
+        if (v[i] > v[j])
+            swap(v[i],v[j]);
+    }
+}
+            </textarea>
+        </div>
+    </div>
+</body>
+</html>

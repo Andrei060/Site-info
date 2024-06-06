@@ -1,0 +1,44 @@
+@font-face {
+    font-family: font;
+    src: url("Comic Book.otf");
+}
+.butonevaluare{
+    border-radius: 24px;
+    padding: 12px;
+    cursor:pointer;
+    background-color: darkblue;
+    font-weight: bold;
+    color: white;
+    border: none;
+    transition: .7s;
+    font-family: font;
+}
+.butonevaluare:hover{
+    transition: .7s;
+    color:darkblue;
+    background-color: white;
+}
+.htmldiv
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.htmldiv div{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+@media(max-width:1200px)
+{
+    .htmldiv{
+        display: flex;
+        flex-direction: column;
+    }
+    .htmldiv div
+    {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+}

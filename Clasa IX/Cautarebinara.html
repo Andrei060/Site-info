@@ -1,0 +1,70 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/antet.css">
+    <link rel="stylesheet" href="../CSS/clase.css">
+    <link rel="stylesheet" href="../CSS/click.css">
+    <link rel="icon" href="../CSS/coding_computer_pc_screen_code_icon_193925.ico">
+    <script src="../JS/cod.js"></script>
+    <script src="../JS/click.js"></script>
+    <title>PROINFO</title>
+</head>
+<body>
+    <div class="antet">
+        <a href="../index.html" class="menu">ACASA</a>
+        <a href="../bac.html" class="menu">BAC</a>
+        <ul>
+            <li>
+                <a class="menu   menuactiv" id="butonsubmeniu" onclick="meniu()" style="width: 130px;cursor: pointer;">INFORMATICA</a>
+            </li>
+            <li>
+                <ul class="submenu" id="submeniu">
+                    <li class="linkactiv">
+                        <a href="../clasaIX.html">Clasa a IX-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaX.html">Clasa a X-a</a>
+                    </li>
+                    <li>
+                        <a href="../clasaXI.html">Clasa a XI-a</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a href="../HTML.html" class="menu">HTML</a>
+        <a href="../css.html" class="menu">CSS</a>
+        <a href="../javascript.html" class="menu">JAVASCRIPT</a>
+    </div>
+    <div class="progres"></div>
+    <div style="padding: 20px;">
+        <H1>Cautare Binara</H1>
+        <p>Căutarea binară se poate face într-un vector numai dacă elementele acestuia sunt în ordine 
+            (de obicei crescătoare) după un anumit criteriu 
+           . Căutarea binară presupune împărțirea vectorului în secvențe din ce în ce mai mici, 
+           înjumătățindu-le și continuând cu jumătatea în care se poate afla valoarea dorită 
+           (conform ordinii elementelor din vector).
+        </p>
+        <h3>Vector v este ordonat crescator si cautam o valoare x </h3>
+        <textarea style="height: 550px;width: 500px;">
+//cautam x in vector
+int st = 1; //capatul din stanga
+int dr = n; //capatul din dreapta
+int poz = 0; //pozitia elementului dorit
+while (st <= dr)
+{
+    int m = (st + dr)/2; //mijlocul secventei
+    if (v[m] >= x)
+    {
+        poz = m;
+        dr = m - 1;
+    }
+    else
+    {
+        st = m + 1;
+    }
+}
+if (v[poz] == x) cout<<"x apare in sir pe pozitia "<<poz;
+else cout<<"x nu apare in sir";
+        </textarea>
+    </div>
+</body>
+</html>

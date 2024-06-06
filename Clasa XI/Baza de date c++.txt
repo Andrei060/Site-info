@@ -1,0 +1,80 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+struct nod 
+{ 
+    int cod,nr_exemplare; 
+    char nume[51];
+    nod *stg, *dr;
+}; 
+int n,NrMaxim_Exemplare;
+nod *r = NULL;
+void Creare(nod *&r, int cod,int nr,char denumire[]) 
+{ 
+    if(r!=NULL) 
+    {
+        if(cod < r->cod) 
+            Creare(r->stg,cod,nr,denumire); 
+        else if(cod > r->cod) 
+            Creare(r->dr,cod,nr,denumire);
+        else cout<<"Valoarea exista!\n"; 
+    } 
+    else 
+    {
+        r = new nod; 
+        r->cod = cod;
+        r->nr_exemplare = nr;
+        strcpy(r->nume,denumire);
+        r->stg = NULL; 
+        r->dr = NULL; 
+    } 
+  
+} 
+void RSD(nod *r) 
+{
+    if(r != NULL) 
+    { 
+        cout<<r->cod<<" "<<r -> nr_exemplare<<" "<<r -> nume<<'\n'; 
+        RSD(r->stg); 
+        RSD(r->dr); 
+    } 
+} 
+void RSD10(nod *r) 
+{
+    if(r != NULL) 
+    { 
+        if (r ->nr_exemplare < 10)
+            cout<<r->cod<<" "<<r ->nr_exemplare<<" "<<r->nume<<'\n'; 
+        RSD10(r->stg); 
+        RSD10(r->dr); 
+    } 
+} 
+void RSDMAX(nod *r) 
+{
+    if(r != NULL) 
+    { 
+        if (r->nr_exemplare == NrMaxim_Exemplare)
+            cout<<r->cod<<" "<<r->nr_exemplare<<" "<<r->nume<<'\n'; 
+        RSDMAX(r->stg); 
+        RSDMAX(r->dr); 
+    } 
+} 
+int main()
+{
+    cin>>n;
+    int nr = 0,cod = 0;
+    char denumire[51];
+    for (int i = 1; i<=n;i++)
+    {
+        cin>>cod>>nr>>denumire;
+        NrMaxim_Exemplare = max(NrMaxim_Exemplare,nr);
+        Creare(r,cod,nr,denumire);
+    }
+    cout<<"PARCURGERE RSD:"<<'\n';
+    RSD(r);
+    cout<<"CARTI CU MAI PUTIN DE 10 EXEMPLARE:"<<'\n';
+    RSD10(r);
+    cout<<"CARTI CU NUMAR MAXIM DE EXEMPLARE:"<<'\n';
+    RSDMAX(r);
+    return 0;
+}
